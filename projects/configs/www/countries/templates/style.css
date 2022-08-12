@@ -1,0 +1,36 @@
+body {
+
+margin: 0;
+background-color: #fff;
+}
+// Variables
+@link-color:       @brand-primary;
+@link-hover-color: darken(@link-color, 15%);
+
+// Usage
+a {
+  color: @link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: @link-hover-color;
+    text-decoration: ;
+  }
+}
+
+
+#container{
+background: url(bg1.png) repeat-x;
+height: 104px;
+margin-top: 0;
+margin-left: auto;
+margin-right: auto;
+}
+.title{
+font-family: 'Indie Flower', cursive;
+font-size: 16pt;
+padding-top: 20px;
+
+
+text-align: center;
+}

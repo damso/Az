@@ -1,0 +1,66 @@
+! CSPGATE
+crypto ipsec df-bit copy
+crypto isakmp identity address
+username cscons privilege 15 password 0 csp
+hostname CSP-$HOSTNAME
+enable password csp
+!
+!
+!
+!
+!
+crypto isakmp policy 1
+ hash sha
+ encr 3des
+ authentication pre-share
+ group 2
+!
+crypto isakmp key AmRest^key1 address $SZYFR_PRI
+crypto isakmp key AmRest^key1 address $SZYFR_SEC
+crypto isakmp key AmRest^key1 address $SZYFR_TRI
+!
+crypto ipsec transform-set TRANSFORMSET_VPN esp-aes 256 esp-sha-hmac
+!
+ip access-list extended VPN-ACL1
+ permit gre host $LOOP0 host $SZYFR_PRI
+!
+ip access-list extended VPN-ACL2
+ permit gre host $LOOP0 host $SZYFR_SEC
+!
+ip access-list extended VPN-ACL3
+ permit gre host $LOOP0 host $SZYFR_TRI
+!
+!
+crypto map VPN 1 ipsec-isakmp
+ match address VPN-ACL1
+ set transform-set TRANSFORMSET_VPN
+ set peer $SZYFR_PRI
+!
+crypto map VPN 2 ipsec-isakmp
+ match address VPN-ACL2
+ set transform-set TRANSFORMSET_VPN
+ set peer $SZYFR_SEC
+!
+crypto map VPN3G 1 ipsec-isakmp
+ match address VPN-ACL3
+ set transform-set TRANSFORMSET_VPN
+ set peer $SZYFR_TRI
+!
+interface FastEthernet0/0
+ ip address 192.168.1.2 255.255.255.0
+!
+interface FastEthernet0/1
+ ip address $DSL_IP $DSL_NETMASK
+ crypto map VPN
+!
+interface FastEthernet0/2
+ ip address 192.168.0.2 255.255.255.0
+ crypto map VPN3G
+!
+!
+ip route $LOOP0 255.255.255.255 192.168.1.1
+ip route $SZYFR_PRI 255.255.255.255 $DSL_GW
+ip route $SZYFR_SEC 255.255.255.255 $DSL_GW
+ip route $SZYFR_TRI 255.255.255.255 192.168.0.1
+!
+end

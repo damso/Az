@@ -1,0 +1,88 @@
+<html>
+<head>
+</head>
+<body>
+<form method="POST" action="process.php">
+<font size="1" color="#b22222" face="arial">
+<table align="center">
+<caption>&nbsp;<b>Router model:</b></caption>
+<tr>
+<td><input type="radio" name="template" value="1861">Cisco 1861</td>
+<td><input type="radio" name="template" value="2801">Cisco 2801</td>
+<td><input type="radio" name="template" value="2811">Cisco 2811</td>
+<td><input type="radio" name="template" value="881">Cisco 881</td>
+</tr>
+</table>
+<table align="center">
+<caption>&nbsp;<b>PPPoE Option</b></caption>
+<tr><td><input type="radio" name="pppoe" value="1">With PPPoE</td><td><input type="radio" name="pppoe" value="0">Without PPPoE</td></tr>
+<tr><td>PPPoE username</td><td><input type"text" name="puser"></td></tr>
+<tr><td>PPPoE password</td><td><input type"text" name="ppas"></td></tr>
+</table>
+</font>
+<font color="red" face="arial">
+<table><caption>&nbsp;<b>Config's parameters:</b></caption>
+<tr><td>Hostname (COUNTRY_BRAND_CITY_STREET):</td>
+<td><input type="text" name="hostname" size="40"/></td></tr>
+<tr><td>Primary encryption router IP:</td>
+<td><select name="szyfr_pri">
+<option>195.190.24.123</option>
+<option>195.190.24.124</option>
+<option>195.190.24.125</option>
+<option>195.190.24.126</option>
+</select>
+</td></tr>
+<tr><td>Secondary encryption router IP:</td>
+<td><select name="szyfr_sec">
+<option>195.190.24.123</option>
+<option>195.190.24.124</option>
+<option>195.190.24.125</option>
+<option>195.190.24.126</option>
+</select>
+</td></tr>
+<tr><td>Tertiary encryption router IP:</td>
+<td><select name="szyfr_tri">
+<option>195.190.24.123</option>
+<option>195.190.24.124</option>
+<option>195.190.24.125</option>
+<option>195.190.24.126</option>
+</select>
+</td></tr>
+<tr><td>Quaternary encryption router IP:</td>
+<td><select name="szyfr_qua">
+<option>195.190.24.123</option>
+<option>195.190.24.124</option>
+<option>195.190.24.125</option>
+<option>195.190.24.126</option>
+</select>
+</td></tr>
+<tr><td>Interface Loopback0 IP:</td>
+<td><input type="text" name="loop0" size="15"/></td></tr>
+<tr><td>Interface Tunnel1 IP:</td>
+<td><input type="text" name="tunnel1_ip" size="15"/></td></tr>
+<tr><td>Interface Tunnel2 IP:</td>
+<td><input type="text" name="tunnel2_ip" size="15"/></td></tr>
+<tr><td>Interface Tunnel3 IP:</td>
+<td><input type="text" name="tunnel3_ip" size="15"/></td></tr>
+<tr><td>Interface Tunnel4 IP:</td>
+<td><input type="text" name="tunnel4_ip" size="15"/></td></tr>
+<tr><td>LAN IP:</td>
+<td><input type="text" name="lan_ip" size="15"/></td></tr>
+<tr><td>WAN IP:</td>
+<td><input type="text" name="wan_ip" size="15"/></td></tr>
+<tr><td>WAN netmask:</td>
+<td><input type="text" name="wan_netmask" size="15"/></td></tr>
+<tr><td>WAN GW:</td>
+<td><input type="text" name="wan_gw" size="15"/></td></tr>
+<tr><td>FXS0 number:</td>
+<td><input type="text" name="fxs0" size="15"/></td></tr>
+<tr><td>FXS1 number:</td>
+<td><input type="text" name="fxs1" size="15"/></td></tr>
+<tr><td>SAP:</td>
+<td><input type="text" name="sap" size="15"/></td></tr>
+</table>
+</font>
+<input type="submit"/><input type="reset"/>
+</form>
+</body>
+</html>
