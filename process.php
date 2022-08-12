@@ -1,8 +1,8 @@
 <?php
-$url="Location: http://plhqlina01";
+$url="Location: index.php";
 if ($_REQUEST["country"])
 {
-$url="Location: http://plhqlina01/projects/configs/www/countries/".$_REQUEST["country"]."/config.php";
+$url="Location: projects/configs/www/countries/".$_REQUEST["country"]."/config.php";
 header($url);
 }
 else
