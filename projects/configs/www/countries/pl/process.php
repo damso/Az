@@ -1,5 +1,6 @@
 <?php
 echo "created<br/>";
+
 if ($_REQUEST["szyfr_pri"] == "195.190.24.123" & $_REQUEST["szyfr_sec"] == "195.190.24.124" )
 {
  $EIGRP_PRI="1";
@@ -117,6 +118,8 @@ $DSL_GW=$_REQUEST["wan_gw"];
 $DSL_NETMASK=$_REQUEST["wan_netmask"];
 $FXS0=$_REQUEST["fxs0"];
 $FXS1=$_REQUEST["fxs1"];
+
+echo "$HOSTNAME-$router.conf created<br/>";
 
 #881-K9 bez SitB
 if ($_REQUEST["template"]=="881-K9")
