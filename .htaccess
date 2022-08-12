@@ -1,0 +1,4 @@
+AuthType Basic
+AuthName "PLHQLINA01 Login"
+AuthUserFile access_plhqlina
+Require valid-user
