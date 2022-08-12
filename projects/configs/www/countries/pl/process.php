@@ -1,4 +1,5 @@
 <?php
+echo "created<br/>";
 if ($_REQUEST["szyfr_pri"] == "195.190.24.123" & $_REQUEST["szyfr_sec"] == "195.190.24.124" )
 {
  $EIGRP_PRI="1";
